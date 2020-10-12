@@ -5,10 +5,10 @@ namespace Entities\Cars;
 use Entities\Car;
 use Entities\Engine;
 
-class Pride implements Car{
+class Tesla implements Car{
 
     private $engine;
-    private $type = "Pride 131";
+    private $type = "Tesla Model X";
 
     public function __construct(Engine $engine){
         $this->engine = $engine;

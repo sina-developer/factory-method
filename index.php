@@ -3,19 +3,13 @@
 require("./autoload.php");
 
 use Factories\Companies\PrideFactory;
-use Factories\EngineCompanies\TeslaEngine;
-use Factories\EngineCompanies\SaipaEngine;
+use Factories\Companies\TeslaFactory;
 
+$factory1 = new PrideFactory();
+$factory2 = new TeslaFactory();
 
-$factory = new PrideFactory();
+$car1 = $factory1->makeCar();
+$car2 = $factory2->makeCar();
 
-// We Also Can Implement Engine Setup inside of CarFactories but I write this way to make some practice ;)
-$engineFactory = new SaipaEngine();
-
-$engine = $engineFactory->buildEngine();
-
-$factory->setEngine($engine);
-
-$car = $factory->makeCar();
-
-echo $car->toString();
+echo $car1->toString();
+echo $car2->toString();
